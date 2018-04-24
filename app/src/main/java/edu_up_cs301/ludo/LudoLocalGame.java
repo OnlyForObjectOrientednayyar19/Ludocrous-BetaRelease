@@ -80,7 +80,9 @@ public class LudoLocalGame extends LocalGame {
         if (canMove(playerID = getPlayerIdx(action.getPlayer()))) {
             if (action instanceof ActionMoveToken && state.getCanMovePiece() == true) {
                 //move forward, consider and react to landing on another piece
-                return state.advanceToken(playerID, ((ActionMoveToken) action).getIndex());
+                state.advanceToken(playerID, ((ActionMoveToken) action).getIndex());
+                checkIfGameOver();
+                return true;
 
             }
             else if (action instanceof ActionRollDice && state.getIsRollable()== true) {
@@ -150,4 +152,11 @@ public class LudoLocalGame extends LocalGame {
         }
         return true; // do nothing since the move was not valid!
     }
+
+    public void checkGameOver(){
+
+
+    }
+
+
 }

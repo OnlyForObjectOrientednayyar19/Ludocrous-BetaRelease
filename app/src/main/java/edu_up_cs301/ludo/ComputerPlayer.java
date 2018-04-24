@@ -36,7 +36,7 @@ public class ComputerPlayer extends GameComputerPlayer {
         //if it is the computer's turn to roll
         if(myState.getWhoseMove() == this.playerNum){
             if(myState.getIsRollable()) {
-                Log.i("Computer Player: " + this.playerNum, "Rolling the dice");
+               // Log.i("Computer Player: " + this.playerNum, "Rolling the dice");
                 game.sendAction(new ActionRollDice(this));
                 return;
             }

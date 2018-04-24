@@ -36,7 +36,7 @@ public class ComputerSmartPlayer extends GameComputerPlayer {
         // if it's not our move, ignore it
         if (myState.getWhoseMove() != this.playerNum) return;
         // sleep for 0.3 seconds to slow down the game
-        sleep(500);
+        sleep(700);
         //if it is the computer's turn to roll
         if (myState.getWhoseMove() == this.playerNum) {
             if (myState.getIsRollable()) {
@@ -234,25 +234,8 @@ public class ComputerSmartPlayer extends GameComputerPlayer {
                 pieceReturn = k;
             }
         }
-        Log.i("==================","=======================");
-        Log.i("Piece Index:",""+pieceIndex);
-        Log.i("Dice Val",""+myState.getDiceVal());
-        Log.i("pieceScoreArray[0]",""+pieceScoreArray[0]);
-        Log.i("pieceScoreArray[1]",""+pieceScoreArray[1]);
-        Log.i("pieceScoreArray[2]",""+pieceScoreArray[2]);
-        Log.i("pieceScoreArray[3]",""+pieceScoreArray[3]);
-        Log.i("greatest score",""+greatestScore);
-        Log.i("returning",""+(indexFirstPiece+pieceReturn));
-        Log.i("==================","=======================");
-        Log.i("Order 0",""+order[0]);
-        Log.i("Order 1",""+order[1]);
-        Log.i("Order 2",""+order[2]);
-        Log.i("Order 3",""+order[3]);
-        Log.i("Furthest"+myState.getPieceFurthestTravelled(this.playerNum),"order[3]"+order[3]);
-        Log.i("==================","=======================");
         if(myState.getPieceFurthestTravelled(this.playerNum) == order[3]){
-            Log.i("THE FURTHEST PIECE MATCHES ORDER 3","");
-        }
+         }
          return indexFirstPiece+pieceReturn;
     }//determineWhichPieceToMove
 

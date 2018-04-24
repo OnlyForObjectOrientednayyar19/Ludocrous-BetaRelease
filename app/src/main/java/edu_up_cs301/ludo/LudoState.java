@@ -209,8 +209,8 @@ public class LudoState extends GameState {
      * increments player score
      * increments player score
      */
-    public void incPlayerScore() {
-        playerScore[playerID_active]++;
+    public void incPlayerScore(int playerID) {
+        playerScore[playerID]++;
     }
 
     /**
@@ -278,7 +278,7 @@ public class LudoState extends GameState {
             if(currentLocation>50){
                 if(diceVal+currentLocation == homeBaseLocation){
                     pieces[indexOfCurrentToken].incNumSpacesMoved(diceVal);
-                    incPlayerScore();
+                    incPlayerScore(playerID);
                     pieces[indexOfCurrentToken].setReachedHomeBase(true);
                     this.scoredAPoint = true;
                     Log.i("Player Scored a Point","His score is now "+playerScore[playerID]);
